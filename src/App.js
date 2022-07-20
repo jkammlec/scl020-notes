@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
@@ -18,7 +18,7 @@ function App() {
 function Home() {
   return (
     <>
-      <main>
+      <main className="App">
       <h1>Welcome to Cat-notes!</h1>
         <p>Login with Google</p>
         <p><Link className="links" to="/login">Login with email</Link></p>
@@ -31,7 +31,7 @@ function Home() {
 function Login() {
   return (
     <>
-      <main>
+      <main className="App">
         <h1>Enter your data to log in</h1>
         <p>Email: <input id="mail" type="text" placeholder="Email that you use"></input></p>
         <p>Password: <input id="pass" type="password" placeholder="Password "></input></p>
@@ -43,7 +43,7 @@ function Login() {
 function Register() {
   return (
     <>
-      <main>
+      <main className="App">
       <h1>Enter your data to register</h1>
         <p>User: <input id="nm" type="text" placeholder="Name or nickname"></input></p>
         <p>Email: <input id="mail" type="text" placeholder="Email that you use"></input></p>
