@@ -1,9 +1,12 @@
+/* fuente local */
 @font-face {
   font-family: 'Hey Comic';
   src: url('./fonts/Hey\ Comic.ttf') format('truetype');
   font-style: normal;
   font-weight: normal;
 }
+
+/* estilos generales */
 
 body {
   background-image: url(./img/patitas.png);
@@ -18,6 +21,9 @@ p {
   font-family: 'Hey Comic';
   font-weight: lighter;
 }
+
+/* textos y fondo principal gatito */
+
 .App {
   text-align: center;
   margin-top: 50px;
