@@ -1,38 +1,56 @@
+@font-face {
+  font-family: 'Hey Comic';
+  src: url('./fonts/Hey\ Comic.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  background-image: url(./img/patitas.png);
+  background-repeat: repeat;
+  background-attachment: fit-content;
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 1px 3px black;
+}
+
+p {
+  font-family: 'Hey Comic';
+  font-weight: lighter;
+}
 .App {
   text-align: center;
+  margin-top: 50px;
+  background-image: url(./img/catorange.png);
+  background-position: center;
+  background-attachment: cover;
+  background-repeat: no-repeat;
+  background-size: 370px;
+  width: 400px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1 {
+  font-size: 25px;
+  padding-top: 180px;
+  font-family: 'Hey Comic';
+  font-style: italic;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App h2 {
+  font-size: 18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.links , .links:visited, .links:link{
+  text-decoration: none;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.links:hover {
+  color: grey;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btnBack {
+  width: 16px;
+  height: 16px;
 }
