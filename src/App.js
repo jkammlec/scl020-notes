@@ -33,13 +33,10 @@ function Login() {
     <>
       <main>
         <h1>Enter your data to log in</h1>
-        <p>Email:</p>
-        <p>Password:</p>
-        <p><Link className="links" to="/">↩️</Link></p>
+        <p>Email: <input id="mail" type="text" placeholder="Email that you use"></input></p>
+        <p>Password: <input id="pass" type="password" placeholder="Password "></input></p>
+        <p><Link className="links" to="/">↩️</Link> <button id="btn_login" type="submit">Login</button></p>
       </main>
-      {/* <nav>
-        <Link to="/">Home</Link>
-      </nav> */}
     </>
   );
 }
@@ -48,10 +45,11 @@ function Register() {
     <>
       <main>
       <h1>Enter your data to register</h1>
-        <p>User:</p>
-        <p>Email:</p>
-        <p>Password:</p>
-        <p><Link className="links" to="/">↩️</Link></p>
+        <p>User: <input id="nm" type="text" placeholder="Name or nickname"></input></p>
+        <p>Email: <input id="mail" type="text" placeholder="Email that you use"></input></p>
+        <p>Password: <input id="pass" type="password" placeholder="Password "></input></p>
+        <p><Link className="links" to="/">↩️</Link> <button id="btn_register" type="submit">Sign in</button></p>
+        
       </main>
     </>
   );
@@ -60,11 +58,6 @@ function Notes() {
   return (
     <>
       <main>
-        <h2>Who are we?</h2>
-        <p>
-          That feels like an existential question, don't you
-          think?
-        </p>
       </main>
     </>
   );

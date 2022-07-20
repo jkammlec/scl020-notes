@@ -43,6 +43,8 @@ p {
   font-size: 18px;
 }
 
+/* links */
+
 .links , .links:visited, .links:link{
   text-decoration: none;
   color: white;
@@ -50,7 +52,25 @@ p {
 .links:hover {
   color: grey;
 }
+
+/* botones */
+
 .btnBack {
   width: 16px;
   height: 16px;
+}
+#pass {
+  width: 80px;
+}
+
+#mail {
+  width: 130px;
+}
+
+#pass, #nm, #mail, #btn_register, #btn_login {
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-family: 'Hey Comic';
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.5)
 }
