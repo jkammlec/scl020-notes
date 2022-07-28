@@ -11,7 +11,8 @@
 .mainBody {
   background-image: url(./img/patitas.png);
   background-repeat: repeat;
-  background-attachment: fit-content;
+  /* background-attachment: fit-content; */
+  background-position: 100%;
   background-size: cover;
   color: white;
   text-shadow: 2px 1px 3px black;
@@ -21,6 +22,7 @@
 p {
   font-family: 'Hey Comic';
   font-weight: lighter;
+  padding: 5px;
 }
 
 /* textos y fondo principal gatito */
@@ -87,16 +89,25 @@ p {
   background-repeat: no-repeat;
   background-attachment: fit-content;
   background-size: cover;
+  background-position: cover;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   font-family: 'Hey Comic';
   font-weight: lighter;
   text-shadow: 2px 1px 3px black;
   color: white;
+  text-align: center;
+
 }
 .head {
-  margin-top: 0;
+  padding-top: 20px;
   margin-left: auto;
   margin-right: auto;
+  width: 450px;
+}
+
+.head h1 {
+  background-color: rgba(128, 128, 128, 0.416);
+  width: 450px;
+  border-radius: 20px;
+  height: 45px;
 }
