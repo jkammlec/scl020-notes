@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
+import { getAuth, signInWithRedirect } from "firebase/auth";
 
 function App() {
   return (
