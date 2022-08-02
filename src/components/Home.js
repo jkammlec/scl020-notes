@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/authContext";
+
 export function Home() {
+
     return (
       <>
         <main className="mainBody">
