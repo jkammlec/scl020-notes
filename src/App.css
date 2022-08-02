@@ -84,6 +84,7 @@ p {
   box-shadow: 2px 2px 2px rgba(0,0,0,0.5)
 }
 
+/* estilos vista notas */
 .notesView {
   background-image: url(./img/patitas-multi.png);
   background-repeat: no-repeat;
