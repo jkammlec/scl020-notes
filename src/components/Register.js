@@ -4,18 +4,19 @@ import { useAuth } from "../context/authContext.js";
 import { async } from "@firebase/util";
 
 export function Register() {
-  const {signUp} = useAuth()
+  
 
   const [user, setUser] = useState({
-    user:'',
+    // user:'',
     email: '',
     password: '',
   });
-  const [error, setError] = useState();
+  const {signUp} = useAuth()
   const navigate = useNavigate()
+  const [error, setError] = useState();
 
-  const handleChange = ({target: {name, value}}) => {
-    setUser({...user, [name]: value});
+  const handleChange = ({target: {name, value}}) => { //para cambiar o actualizar el estado
+    setUser({ ...user, [name]: value});
   }
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -32,10 +33,11 @@ export function Register() {
     return (
       <>
         <main className="mainBody">
-        {error && <p>{error} </p>}
+        {error && <p>{error} </p>} {/* si existe el error va mostrarlo en la etiqueta p */}
+        
         <form className="App" onSubmit={handleSubmit}>
         <h1>Enter your data to register</h1>
-          <p>User: <input id="nm" name="user" type="text" placeholder="Name or nickname" onChange={handleChange}></input></p>
+          <p>User: <input id="nm" name="user" type="text" placeholder="Name or nickname" ></input></p>
           <p>Email: <input id="mail" name="email" type="email" placeholder="Email that you use" onChange={handleChange}></input></p>
           <p>Password: <input id="pass" name="password" type="password" placeholder="Password" onChange={handleChange}></input></p>
           <p><Link className="links" to="/">↩️</Link> <button id="btn_register" type="submit">Sign in</button></p>
