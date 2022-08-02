@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config.js";
 
 export const authContext = createContext()
@@ -8,15 +8,20 @@ export const authContext = createContext()
 export const useAuth = () => {
     const context = useContext(authContext)
     if (!context) throw new Error('There is not auth provider') //error en caso de que no esté provider envolviendo a los componentes
-    return context
-}
+    return context;
+};
 
 export function AuthProvider({ children }) {
+    
     const signUp = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-    } //el signUp va a manejar el error, por eso no hay un await en la función de firebase auth
+        return createUserWithEmailAndPassword(auth, email, password);
+      };
+    
+      const login = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+      };
     return (
-        <authContext.Provider value={{ signUp }}>
+        <authContext.Provider value={{ signUp, login }}>
             {children}
         </authContext.Provider>
         // respecto al value en provider: todos los elementos hijos van a poder acceder al objeto user
