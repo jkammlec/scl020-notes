@@ -30,12 +30,6 @@ export function AuthProvider({ children }) {
         return signInWithPopup(auth, googleProvider)
     }
 
-    // useEffect(() => { //ejecuta algo apenas carga el componente
-    //     onAuthStateChanged(auth, currentUser => {
-    //         setUser(currentUser);
-    //     })
-    // }, [])
-
     return (
         <authContext.Provider value={{ signUp, login, logout, loginWithGoogle}}>
             {children}
