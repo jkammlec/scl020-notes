@@ -1,15 +1,18 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/authContext";
 
 export function Home() {
-
   const { loginWithGoogle } = useAuth()
+  const [error, setError] = useState("");
   const navigate = useNavigate()
 
+
   const handleGoogleSignin = async () => {
+    setError("");
     try {
-      await loginWithGoogle();
-      navigate("/");
+      await loginWithGoogle()
+      navigate("/notes")
     } catch (error) {
       setError(error.message);
     }

@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/config.js";
 
 
@@ -13,7 +13,6 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-    // const [user, setUser] = useState(null) //en principio saldrá null mientras no se haya logueado un usuario
 
     const signUp = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -22,13 +21,13 @@ export function AuthProvider({ children }) {
     const login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
     };
-
-    const logout = () => signOut(auth); //se trae la función para desloguear de firebase
-
+    
     const loginWithGoogle = () => {
         const googleProvider = new GoogleAuthProvider()
         return signInWithPopup(auth, googleProvider)
     }
+    
+    const logout = () => signOut(auth); //se trae la función para desloguear de firebase
 
     return (
         <authContext.Provider value={{ signUp, login, logout, loginWithGoogle}}>
