@@ -7,9 +7,9 @@ export function Register() {
   
 
   const [user, setUser] = useState({
-    // user:'',
-    email: '',
-    password: '',
+    // userName:"",
+    email: "",
+    password: "",
   });
   const {signUp} = useAuth()
   const navigate = useNavigate()
@@ -37,7 +37,7 @@ export function Register() {
         
         <form className="App" onSubmit={handleSubmit}>
         <h1>Enter your data to register</h1>
-          <p>User: <input id="nm" name="user" type="text" placeholder="Name or nickname" ></input></p>
+          <p>User: <input id="nm" name="userName" type="text" placeholder="Name or nickname" ></input></p>
           <p>Email: <input id="mail" name="email" type="email" placeholder="Email that you use" onChange={handleChange}></input></p>
           <p>Password: <input id="pass" name="password" type="password" placeholder="Password" onChange={handleChange}></input></p>
           <p><Link className="links" to="/">↩️</Link> <button id="btn_register" type="submit">Sign in</button></p>
