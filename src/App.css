@@ -138,3 +138,8 @@ p {
   border-radius: 20px;
   height: 45px;
 }
+
+.cardNote {
+  margin: 10px;
+  width: 200px;
+}
