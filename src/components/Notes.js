@@ -5,15 +5,12 @@ import { collection, getDocs, getDoc, deleteDoc, doc } from "firebase/firestore"
 import { db } from "../firebase/config.js";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { async } from "@firebase/util";
 import {Box, Card, Input} from '@mui/material';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import DeleteIcon from '@mui/icons-material/Delete';
-import IconButton from '@mui/material/IconButton';
+
 
 // import Swal from 'sweetalert2';
 // import withReactContent from "sweetaler2-react-content";
@@ -34,7 +31,7 @@ export function Notes() {
   const navigate = useNavigate() //para "navegar" entre las rutas de la app
 
   const [notes, SetNotes] = useState([]) //Configurar hooks
-  const notesCollection = collection(db, "catnotes") //referencia a DB firestore
+  const notesCollection = collection(db, "notes") //referencia a DB firestore
   const getNotes = async () => { //funcion pa mostrar todos los docs desde firestore
     const data = await getDocs(notesCollection)
     SetNotes(
@@ -44,7 +41,7 @@ export function Notes() {
   }
   //funcion eliminar doc
   const deleteNote = async (id) => {
-    const noteDoc = doc(db, "catnotes", id)
+    const noteDoc = doc(db, "notes", id)
     await deleteDoc(noteDoc)
     getNotes()
   }
@@ -101,9 +98,7 @@ export function Notes() {
 
                 <CardActions>
                   <Button><Link to={'/edit/$note.id'}>✏️</Link></Button>
-                  <Button size="small" onClick={() => { confirmDelete(note.id) }}><IconButton aria-label="delete" size="small">
-                    <DeleteIcon fontSize="inherit" />
-                  </IconButton></Button>
+                  <Button size="small" onClick={() => { confirmDelete(note.id) }}>🗑️</Button>
                 </CardActions>
               </Card>
             </div>

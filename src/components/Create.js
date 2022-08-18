@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/config.js";
-import { FormControl, Input, InputLabel } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
+import { FormControl, Input, Typography, Box } from '@mui/material';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
 
 export const Create = () => {
     const [title, setTitle] = useState("");
@@ -27,21 +24,31 @@ export const Create = () => {
   
     return (
       <>
-        <h1>Write your note</h1>
-        <FormControl onSubmit={store}>
-        <InputLabel htmlFor="my-input">Title</InputLabel>
-        <Input id="my-input" 
-        value={title}
+        <main className="notesView">
+        <div className="bgForm">
+        <FormControl className="formCreate" sx={{ m: 6 }} onSubmit={store} >
+        <Typography className="titleForm" sx={{ m: 2 }} variant="h4">Write your note</Typography>
+        <Input 
+        required value={title}
         onChange={(e) => setTitle(e.target.value)}
-        type="text" />
-        <InputLabel htmlFor="my-input">Body</InputLabel>
-        <Input id="my-input" 
-        value={description}
+        type="text" 
+        placeholder="Title"
+        className="marginForm"
+        /> 
+        <Input  
+        required value={description}
         onChange={(e) => setDescription(e.target.value)}
-        type="text" />
-        <Button type="submit" variant="contained" color="success" endIcon={<SendIcon />}></Button>
+        type="text" 
+        id="outlined-multiline-static"
+        placeholder="Body"
+        label="Multiline"
+        multiline
+        rows={4}
+        className="marginForm" />
+        <Button type="submit" variant="contained" color="success" className="btnSave" >💾</Button>
         </FormControl>
-        
+        </div>
+        </main>
       </>
     );
   };

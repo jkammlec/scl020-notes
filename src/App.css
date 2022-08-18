@@ -143,3 +143,26 @@ p {
   margin: 10px;
   width: 200px;
 }
+
+.marginForm {
+  margin: 5px;
+}
+.btnSave {
+  width: fit-content;
+
+}
+
+.formCreate {
+  align-items: center;
+  width: 300px;
+}
+.bgForm {
+  background-image: url(./img/catgrey.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: cover;
+  margin-left: auto;
+  margin-right: auto;
+  width: 380px;
+  height: 350px;
+}
